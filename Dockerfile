@@ -12,7 +12,9 @@ RUN echo "deb http://www.bchemnet.com/suldr/ debian extra" >> /etc/apt/sources.l
 RUN apt-get update && \
     apt-get install -y --allow-unauthenticated --no-install-recommends \
     brother-lpr-drivers-extra brother-cups-wrapper-extra \
-    suld-driver-4.01.17 \
+    #suld-driver-4.01.17 \
+    #suld-driver-4.00.39 \
+    suld-driver2-1.00.36 \
     cups cups-pdf \
     dbus \
     avahi-daemon avahi-discover avahi-utils libnss-mdns mdns-scan \
