@@ -5,10 +5,14 @@ MAINTAINER Didstopia <support@didstopia.com>
 # Fix apt-get warnings
 ARG DEBIAN_FRONTEND=noninteractive
 
+# Add extra apt repositories
+RUN echo "deb http://www.bchemnet.com/suldr/ debian extra" >> /etc/apt/sources.list
+
 # Install dependencies
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y --allow-unauthenticated --no-install-recommends \
     brother-lpr-drivers-extra brother-cups-wrapper-extra \
+    suld-driver-4.01.17 \
     cups cups-pdf \
     dbus \
     avahi-daemon avahi-discover avahi-utils libnss-mdns mdns-scan \

@@ -12,6 +12,7 @@ set -x
 inotifywait -m -e close_write,moved_to,create /etc/cups | 
 while read -r directory events filename; do
 	if [ "$filename" = "printers.conf" ]; then
+		echo "File /etc/cups/printers.conf changed.."
 		#rm -rf /services/AirPrint-*.service
 		#/airprint-generate.py -d /services
 		rm -rf /etc/avahi/services/AirPrint-*.service
